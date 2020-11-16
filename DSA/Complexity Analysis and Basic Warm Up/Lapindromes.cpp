@@ -1,7 +1,7 @@
 /**
- * Author  : BurninTiles
+ * Author  : BurningTiles
  * Created : 2020-11-10 21:29:20
- * Link    : GitHub.com/BurninTiles
+ * Link    : BurningTiles.github.io
 **/
 
 #include <bits/stdc++.h>

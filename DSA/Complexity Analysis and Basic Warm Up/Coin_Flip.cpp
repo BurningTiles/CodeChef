@@ -1,11 +1,12 @@
 /**
  * Author  : BurningTiles
- * Created : 2020-11-12 01:03:02
+ * Created : 2020-11-14 00:58:44
  * Link    : BurningTiles.github.io
 **/
 
 #include <bits/stdc++.h>
 #define ll long long
+#define lll __int128_t
 #define endl '\n'
 using namespace std;
 
@@ -18,20 +19,25 @@ int main(){
 	ios::sync_with_stdio(0);
 	cin.tie(0);
 
-	ll n, profit=0, tmp;
-	cin >> n;
-	vector<ll> a(n);
-	for(auto &x:a)
-		cin >> x;
-	
-	sort(a.begin(), a.end());
-
-	for(ll i=0; i<n; i++){
-		tmp = a[i]*(n-i);
-		if(tmp > profit) profit = tmp;
+	int t;
+	cin >> t;
+	while(t--){
+		int g;
+		cin >> g;
+		while(g--){
+			int i, n, q;
+			cin >> i >> n >> q;
+			if(n%2==0){
+				cout << n/2 << endl;
+				continue;
+			}
+			if(i==q){
+				cout << n/2 << endl;
+			}
+			else
+				cout << n/2+1 << endl;
+		}
 	}
-	
-	cout << profit;
 	
 	return 0;
 }
@@ -39,6 +45,6 @@ int main(){
 /**
 
 Question : 
-https://www.codechef.com/LRNDSA01/problems/ZCO14003
+https://www.codechef.com/LRNDSA01/problems/CONFLIP
 
 **/
