@@ -1,6 +1,6 @@
 /**
  * Author  : BurningTiles
- * Created : 2020-12-07 23:03:03
+ * Created : 2020-12-12 15:47:54
  * Link    : BurningTiles.github.io
 **/
 
@@ -18,20 +18,16 @@ int main(){
 
 	ios::sync_with_stdio(0);
 	cin.tie(0);
+	
+	int n, ans =0;
+	cin >> n;
 
-	ll d1, v1, d2, v2, p, ans=0;
-	cin >> d1 >> v1 >> d2 >> v2 >> p;
+	for(int i=1; i<n; i++)
+		for(int j=1; j<n; j++)
+			if(i*j<n) ++ans;
+			else break;
 
-	ll i=1;
-	while(true){
-		if(i>=d1) ans += v1;
-		if(i>=d2) ans += v2;
-		if(ans>=p){
-			cout << i;
-			return 0;
-		}
-		++i;
-	}
+	cout << ans;
 
 	return 0;
 }
@@ -39,6 +35,6 @@ int main(){
 /**
 
 Question : 
-https://www.codechef.com/DEC20B/problems/VACCINE1
+https://www.codechef.com/SPRT2020/problems/GOATRIP
 
 **/

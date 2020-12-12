@@ -1,6 +1,6 @@
 /**
  * Author  : BurningTiles
- * Created : 2020-12-07 23:03:03
+ * Created : 2020-12-10 21:49:50
  * Link    : BurningTiles.github.io
 **/
 
@@ -18,27 +18,13 @@ int main(){
 
 	ios::sync_with_stdio(0);
 	cin.tie(0);
-
-	ll d1, v1, d2, v2, p, ans=0;
-	cin >> d1 >> v1 >> d2 >> v2 >> p;
-
-	ll i=1;
-	while(true){
-		if(i>=d1) ans += v1;
-		if(i>=d2) ans += v2;
-		if(ans>=p){
-			cout << i;
-			return 0;
-		}
-		++i;
-	}
-
+	
 	return 0;
 }
 
 /**
 
 Question : 
-https://www.codechef.com/DEC20B/problems/VACCINE1
+https://www.codechef.com/DEC20B/problems/HXOR
 
 **/

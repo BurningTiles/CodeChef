@@ -1,6 +1,6 @@
 /**
  * Author  : BurningTiles
- * Created : 2020-12-07 23:03:03
+ * Created : 2020-12-12 15:58:03
  * Link    : BurningTiles.github.io
 **/
 
@@ -19,26 +19,24 @@ int main(){
 	ios::sync_with_stdio(0);
 	cin.tie(0);
 
-	ll d1, v1, d2, v2, p, ans=0;
-	cin >> d1 >> v1 >> d2 >> v2 >> p;
-
-	ll i=1;
-	while(true){
-		if(i>=d1) ans += v1;
-		if(i>=d2) ans += v2;
-		if(ans>=p){
-			cout << i;
-			return 0;
-		}
-		++i;
+	string s;
+	cin >> s;
+	
+	for(int i=0; i<s.size(); i++){
+		if(s[i]<='Z' && s[i]>='A')
+			s[i] += 32;
+		if(s[i]=='a' || s[i]=='e' || s[i]=='i' || s[i]=='o' || s[i]=='u' || s[i]=='y')
+			continue;
+		cout << "." << s[i];
 	}
-
+	cout << endl;
+	
 	return 0;
 }
 
 /**
 
 Question : 
-https://www.codechef.com/DEC20B/problems/VACCINE1
+https://www.codechef.com/SPRT2020/problems/EMPRNM
 
 **/
