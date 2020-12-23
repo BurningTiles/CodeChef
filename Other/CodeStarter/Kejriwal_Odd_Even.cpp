@@ -1,6 +1,6 @@
 /**
  * Author  : BurningTiles
- * Created : 2020-12-22 10:01:55
+ * Created : 2020-12-22 21:34:09
  * Link    : BurningTiles.github.io
 **/
 
@@ -22,18 +22,15 @@ int main(){
 	int tt;
 	cin >> tt;
 	while(tt--){
-		string s;
-		cin >> s;
-		int d=0, max=0;
-		for(int i=0; i<s.size(); i++){
-			if(s[i]=='<') ++d;
-			else{
-				--d;
-				if(d==0) max = i+1;
-				if(d<0) break;
-			}
+		int n, odd=0, even=0, tmp;
+		cin >> n;
+		while(n){
+			tmp = n%10;
+			tmp%2 ? odd+=tmp : even+=tmp;
+			n /= 10;
 		}
-		cout << max << endl;
+		
+		odd%3==0 || even%4==0 ? cout << "Yes\n" : cout << "No\n";
 	}
 	
 	return 0;
@@ -42,6 +39,6 @@ int main(){
 /**
 
 Question : 
-https://www.codechef.com/LRNDSA02/problems/COMPILER
+https://www.codechef.com/CSTR2020/problems/DELHI
 
 **/

@@ -1,6 +1,6 @@
 /**
  * Author  : BurningTiles
- * Created : 2020-12-22 10:01:55
+ * Created : 2020-12-22 21:42:30
  * Link    : BurningTiles.github.io
 **/
 
@@ -18,30 +18,18 @@ int main(){
 
 	ios::sync_with_stdio(0);
 	cin.tie(0);
-
-	int tt;
-	cin >> tt;
-	while(tt--){
-		string s;
-		cin >> s;
-		int d=0, max=0;
-		for(int i=0; i<s.size(); i++){
-			if(s[i]=='<') ++d;
-			else{
-				--d;
-				if(d==0) max = i+1;
-				if(d<0) break;
-			}
-		}
-		cout << max << endl;
-	}
 	
+	double n, m, a, ans=1;
+	cin >> n >> m >> a;
+	
+	cout << ceil(n/a)*ceil(m/a);
+
 	return 0;
 }
 
 /**
 
 Question : 
-https://www.codechef.com/LRNDSA02/problems/COMPILER
+https://www.codechef.com/CSTR2020/problems/MALLTILE
 
 **/

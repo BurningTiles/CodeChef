@@ -1,6 +1,6 @@
 /**
  * Author  : BurningTiles
- * Created : 2020-12-22 10:01:55
+ * Created : 2020-12-22 21:25:03
  * Link    : BurningTiles.github.io
 **/
 
@@ -19,21 +19,16 @@ int main(){
 	ios::sync_with_stdio(0);
 	cin.tie(0);
 
-	int tt;
-	cin >> tt;
-	while(tt--){
-		string s;
-		cin >> s;
-		int d=0, max=0;
-		for(int i=0; i<s.size(); i++){
-			if(s[i]=='<') ++d;
-			else{
-				--d;
-				if(d==0) max = i+1;
-				if(d<0) break;
-			}
-		}
-		cout << max << endl;
+	int n, x[1001]={0}, tmp;
+	cin >> n;
+	for(int i=0; i<n; i++){
+		cin >> tmp;
+		++x[tmp];
+	}
+	for(int i=0; i<=n; i++){
+		cin >> tmp;
+		if(x[tmp]) --x[tmp];
+		else cout << tmp;
 	}
 	
 	return 0;
@@ -42,6 +37,6 @@ int main(){
 /**
 
 Question : 
-https://www.codechef.com/LRNDSA02/problems/COMPILER
+https://www.codechef.com/CSTR2020/problems/AMONGUS
 
 **/
