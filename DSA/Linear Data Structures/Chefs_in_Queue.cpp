@@ -22,22 +22,19 @@ signed main() {
 	cin.tie(0);
 	cout.tie(0);
 
-	int n, k, ans=1;
+	int n, k, ans=1, tmp;
 	cin >> n >> k;
+	int a[n];
+	vector<pair<int,int>> v;
 	
-	int a[n], flag[k+1]={0}, ff[n];
-	for(int i=0; i<n; i++) cin >> a[i];
-
-	for(int i=n-1; i>=0; i--) {
-		flag[a[i]] = i;
-		--a[i];
-		while(a[i]>0 && !flag[a[i]]) --a[i];
-		if(a[i]) ff[i] = a[i]-i+2;
-		else ff[i] = 1;
-	}
-
-	for(int i=0; i<n; i++){
-		ans = (ans*ff[i]) % mod;
+	for(auto &x:a) cin >> x;
+	for(int i=n-1; i>=0; i--){
+		while(v.size() && v.back().first>=a[i]) v.pop_back();
+		if(v.size()){
+			ans *= v.back().second - i + 1;
+			ans %= mod;
+		}
+		v.push_back({a[i], i});
 	}
 
 	cout << ans;
